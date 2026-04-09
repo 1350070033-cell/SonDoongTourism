@@ -1,0 +1,25 @@
+@model IEnumerable<SonDoongTourism.Models.Tour>
+@{
+    ViewData["Title"] = "Danh sách Tour Sơn Đoòng";
+}
+
+<div class="text-center my-5">
+    <h1 class="display-4 fw-bold">Khám Phá Hang Động Lớn Nhất Thế Giới</h1>
+    <p class="lead">Chọn hành trình phù hợp với bạn để chinh phục Sơn Đoòng.</p>
+</div>
+
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm">
+                <img src="@item.ImageUrl" class="card-img-top" alt="@item.Name" style="height:250px; object-fit:cover;">
+                <div class="card-body">
+                    <h5 class="card-title fw-bold">@item.Name</h5>
+                    <p class="card-text text-muted">@item.DurationDays Ngày | @item.Price.ToString("N0") VNĐ</p>
+                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-success w-100">Xem Chi Tiết & Đặt Tour</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>

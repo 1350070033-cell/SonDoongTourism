@@ -1,0 +1,48 @@
+@model SonDoongTourism.Models.Booking
+@{
+    var tour = ViewBag.Tour as SonDoongTourism.Models.Tour;
+    ViewData["Title"] = tour.Name;
+}
+
+<div class="row mt-4">
+    <div class="col-md-7">
+        <img src="@tour.ImageUrl" class="img-fluid rounded shadow-sm mb-3" alt="@tour.Name" />
+        <h2 class="fw-bold">@tour.Name</h2>
+        <h4 class="text-success">Giá: @tour.Price.ToString("N0") VNĐ</h4>
+        <p><strong>Thời gian:</strong> @tour.DurationDays ngày</p>
+        <p>@tour.Description</p>
+    </div>
+
+    <div class="col-md-5">
+        <div class="card shadow-sm">
+            <div class="card-header bg-dark text-white">
+                <h5 class="mb-0">Điền thông tin đặt Tour</h5>
+            </div>
+            <div class="card-body">
+                <form asp-action="Book" method="post">
+                    <input type="hidden" asp-for="TourId" />
+                    
+                    <div class="mb-3">
+                        <label asp-for="CustomerName" class="form-label"></label>
+                        <input asp-for="CustomerName" class="form-control" placeholder="Nguyễn Văn A" />
+                        <span asp-validation-for="CustomerName" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="Email" class="form-label"></label>
+                        <input asp-for="Email" class="form-control" placeholder="email@example.com" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="Phone" class="form-label"></label>
+                        <input asp-for="Phone" class="form-control" placeholder="090xxxxxxx" />
+                        <span asp-validation-for="Phone" class="text-danger"></span>
+                    </div>
+
+                    <button type="submit" class="btn btn-success w-100 btn-lg">Xác nhận đặt Tour</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

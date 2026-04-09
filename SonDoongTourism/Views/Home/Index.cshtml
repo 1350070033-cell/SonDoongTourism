@@ -1,0 +1,31 @@
+﻿@model IEnumerable<SonDoongTourism.Models.Tour>
+
+<div class="hero-section text-center text-white d-flex align-items-center justify-content-center" 
+     style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/img/sondoong.jpg'); height: 500px; background-size: cover; border-radius: 20px; margin-bottom: 50px;">
+    <div>
+        <h1 class="display-3 fw-bold">Khám Phá Kỳ Quan Thế Giới</h1>
+        <p class="lead">Hành trình tìm về bản ngã giữa thiên nhiên hùng vĩ của Quảng Bình</p>
+        <a href="#tours" class="btn btn-success btn-lg px-5 rounded-pill">Xem Các Tour Ngay</a>
+    </div>
+</div>
+
+<div id="tours" class="container">
+    <h2 class="text-center mb-5 fw-bold text-uppercase">Danh Sách Lịch Trình</h2>
+    <div class="row g-4">
+        @foreach (var item in Model) {
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <img src="@item.ImageUrl" class="card-img-top" style="height: 250px; object-fit: cover;" alt="...">
+                    <div class="card-body text-center">
+                        <h5 class="card-title fw-bold text-success">@item.Name</h5>
+                        <p class="card-text text-muted" style="font-size: 0.9rem;">@item.Description</p>
+                        <h4 class="text-danger fw-bold">@item.Price.ToString("N0") VNĐ</h4>
+                    </div>
+                    <div class="card-footer bg-transparent border-0 pb-3">
+                        <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-outline-success w-100 rounded-pill">Chi Tiết Tour</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
