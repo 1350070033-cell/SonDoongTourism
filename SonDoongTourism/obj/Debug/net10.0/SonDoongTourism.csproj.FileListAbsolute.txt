@@ -250,3 +250,4 @@ C:\Users\Admin\Desktop\New folder (3)\SonDoongTourism\bin\Debug\net10.0\runtimes
 C:\Users\Admin\Desktop\New folder (3)\SonDoongTourism\bin\Debug\net10.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
 C:\Users\Admin\Desktop\New folder (3)\SonDoongTourism\bin\Debug\net10.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
 C:\Users\Admin\Desktop\New folder (3)\SonDoongtourism\obj\Debug\net10.0\compressed\32bwy8pj45-{0}-o7xakpv78p-o7xakpv78p.gz
+C:\Users\Admin\Desktop\New folder (3)\SonDoongTourism\obj\Debug\net10.0\SonDoongTourism.sourcelink.json

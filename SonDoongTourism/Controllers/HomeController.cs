@@ -97,8 +97,9 @@ namespace SonDoongTourism.Controllers
         public async Task<IActionResult> Book(Booking booking)
         {
             // Bỏ qua kiểm tra lỗi của thuộc tính Tour (Khóa ngoại) vì mình không nhập từ form
+            booking.Id = 0;
             ModelState.Remove("Tour");
-
+            ModelState.Remove("Id");
             if (ModelState.IsValid)
             {
                 

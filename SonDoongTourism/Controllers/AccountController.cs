@@ -30,7 +30,7 @@ public IActionResult Register(User user)
     // Bỏ qua kiểm tra lỗi của 2 ô này vì trên giao diện không có
     ModelState.Remove("Email");
     ModelState.Remove("FullName");
-
+    ModelState.Remove("Id");
     if (ModelState.IsValid)
     
     {
@@ -54,6 +54,7 @@ public IActionResult Register(User user)
 [HttpPost]
 public IActionResult Login(string Username, string Password)
 {
+    
     // Lục tìm trong CSDL xem có ai khớp cả Username VÀ Password không?
     var account = _context.Users.FirstOrDefault(u => u.Username == Username && u.Password == Password);
 
